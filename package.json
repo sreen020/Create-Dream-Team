@@ -1,0 +1,27 @@
+{
+  "name": "blok-tech-2022",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreen020/blok-tech-2022.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "bugs": {
+    "url": "https://github.com/sreen020/blok-tech-2022/issues"
+  },
+  "homepage": "https://github.com/sreen020/blok-tech-2022#readme"
+}

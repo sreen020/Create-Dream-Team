@@ -1,21 +1,29 @@
-const express = require('express');
+const express = require("express");
+const expressLayouts = require("express-ejs-layouts");
+
 const app = express();
-const http = require('http');
-const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+app.use(express.static("src"));
+app.use("/css", express.static(__dirname + "src/css"));
+app.use("/js", express.static(__dirname + "./src/js"));
+app.use("/img", express.static(__dirname + "src/img"));
+
+// set the view engine to ejs
+app.use(expressLayouts);
+app.set("layout", "./partials/layout");
+app.set("view engine", "ejs");
+
+// ROUTES
+// home
+app.get("/", (req, res) => {
+  res.render("pages/index", { title: "Home" });
 });
 
-io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
+// Pagina om jouw zoek criteria aan te geven
+app.get("/profile", (req, res) => {
+  res.render("pages/profile", { title: "Profile" });
 });
 
-server.listen(3000, () => {
-  console.log('listening on *:3000');
+app.listen(3000, () => {
+  console.log("listening on 3000");
 });

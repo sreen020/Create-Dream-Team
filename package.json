@@ -1,9 +1,10 @@
 {
   "name": "blok-tech-2022",
-  "description": "",
+  "description": "Matching app blok-tech",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev": "node index.js",
     "watch": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,8 +15,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
-    "socket.io": "^4.4.1"
+    "express-ejs-layouts": "^2.5.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

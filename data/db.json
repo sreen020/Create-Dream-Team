@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "firstname": "Aaron",
+      "lastname": "Keur",
+      "email": "test@test.com",
+      "phone": "0612345678",
+      "skills": 0,
+      "amount_training_days": 1,
+      "match_day": 0
+    },
+    {
+      "id": 1,
+      "firstname": "Niki",
+      "lastname": "Milo",
+      "email": "test@test.com",
+      "phone": "0612345678",
+      "skills": 0,
+      "amount_training_days": 0,
+      "match_day": 0
+    },
+    {
+      "id": 2,
+      "firstname": "Sjoerd",
+      "lastname": "Reen",
+      "email": "test@test.com",
+      "phone": "0612345678",
+      "skills": 0,
+      "amount_training_days": 3,
+      "match_day": 0
+    }
+  ]
+}

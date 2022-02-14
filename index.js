@@ -1,5 +1,6 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
+const fetch = require("node-fetch");
 
 const app = express();
 
@@ -49,15 +50,22 @@ app.set("view engine", "ejs");
 // ROUTES
 // home
 app.get("/", (req, res) => {
-  res.render("pages/index", { title: "Home", data: dummyData });
+  fetch(`http://localhost:8000/users`)
+    .then((res) => res.json())
+    .then((data) => {
+      res.render("pages/index", { title: "Home", data: data });
+    });
 });
 
 app.get("/person/:id", (req, res) => {
-  const detailData = dummyData.find((el) => el.id == req.params.id);
-  res.render("pages/personDetail", {
-    title: `${detailData.firstname} ${detailData.lastname}`,
-    data: detailData,
-  });
+  fetch(`http://localhost:8000/users/${req.params.id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      res.render("pages/personDetail", {
+        title: `${data.firstname} ${data.lastname}`,
+        data: data,
+      });
+    });
 });
 
 // Pagina om jouw zoek criteria aan te geven

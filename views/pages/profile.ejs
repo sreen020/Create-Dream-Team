@@ -1,1 +1,61 @@
-<h1>PROFILE</h1>
+<section>
+  <h1>Profiel page</h1>
+
+  <form>
+    <fieldset>
+      <legend>Profielgegevens</legend>
+
+      <div>
+        <label for="firstname">Voornaam</label>
+        <input id="firstname" type="text" />
+      </div>
+
+      <div>
+        <label for="lastname">Achternaam</label>
+        <input id="lastname" type="text" />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" />
+      </div>
+
+      <div>
+        <label for="phone_number">Telefoonnummer</label>
+        <input id="phone_number" type="tel" />
+      </div>
+
+      <div>
+        <label for="skills">Voetbal Skills</label>
+        <select name="skills" id="skills">
+          <option disabled selected>Selecteer jouw skill</option>
+          <option value="3">Kan werkelijk voetballen</option>
+          <option value="2">Zogenaamde prof</option>
+          <option value="1">Gewoon slecht</option>
+          <option value="0">Extreem belabberd</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="amount_training_days">Hoe vaak wil je trainen?</label>
+        <select name="amount_training_days" id="amount_training_days">
+          <option disabled selected>Selecteer aantal dagen</option>
+          <option value="1">1x per week</option>
+          <option value="2">2x per week</option>
+          <option value="3">3x per week</option>
+          <option value="4">3+ keer per week</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="matchday">Matchday</label>
+        <select name="matchday" id="matchday">
+          <option disabled selected>Selecteer dag</option>
+          <option value="saturday">Zaterdag</option>
+          <option value="sunday">Zondag</option>
+        </select>
+      </div>
+    </fieldset>
+    <button>Submit</button>
+  </form>
+</section>

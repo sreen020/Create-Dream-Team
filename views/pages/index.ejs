@@ -1,1 +1,7 @@
-<h1>INDEX</h1>
+<% data.forEach((item, index) => {%>
+<a href="person/<%= item.id %>">
+  <article>
+    <h2><%=item.firstname%> <%=item.lastname%></h2>
+  </article>
+</a>
+<% });%>

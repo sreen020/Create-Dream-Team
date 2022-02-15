@@ -1,4 +1,9 @@
 {
+  "searchCriteria": {
+    "skills": "0",
+    "amount_training_days": "1",
+    "match_day": "0"
+  },
   "users": [
     {
       "id": 0,
@@ -6,9 +11,9 @@
       "lastname": "Keur",
       "email": "test@test.com",
       "phone": "0612345678",
-      "skills": 0,
-      "amount_training_days": 1,
-      "match_day": 0
+      "skills": "0",
+      "amount_training_days": "1",
+      "match_day": "0"
     },
     {
       "id": 1,
@@ -16,9 +21,9 @@
       "lastname": "Milo",
       "email": "test@test.com",
       "phone": "0612345678",
-      "skills": 0,
-      "amount_training_days": 0,
-      "match_day": 0
+      "skills": "0",
+      "amount_training_days": "1",
+      "match_day": "0"
     },
     {
       "id": 2,
@@ -26,9 +31,29 @@
       "lastname": "Reen",
       "email": "test@test.com",
       "phone": "0612345678",
-      "skills": 0,
-      "amount_training_days": 3,
-      "match_day": 0
+      "skills": "0",
+      "amount_training_days": "3",
+      "match_day": "0"
+    },
+    {
+      "id": 3,
+      "firstname": "Neymar",
+      "lastname": "Santos",
+      "email": "test@test.com",
+      "phone": "0612345678",
+      "skills": "0",
+      "amount_training_days": "1",
+      "match_day": "0"
+    },
+    {
+      "id": 4,
+      "firstname": "Bob",
+      "lastname": "Santos",
+      "email": "test@test.com",
+      "phone": "0612345678",
+      "skills": "0",
+      "amount_training_days": "1",
+      "match_day": "0"
     }
   ]
 }

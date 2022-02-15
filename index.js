@@ -1,46 +1,18 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const fetch = require("node-fetch");
+const bodyParser = require("body-parser");
+const axios = require("axios");
 
 const app = express();
-
-const dummyData = [
-  {
-    id: 0,
-    firstname: "Aaron",
-    lastname: "Keur",
-    email: "test@test.com",
-    phone: 0612345678,
-    skills: 0,
-    amount_training_days: 1,
-    match_day: 0,
-  },
-  {
-    id: 0,
-    firstname: "Niki",
-    lastname: "Milo",
-    email: "test@test.com",
-    phone: 0612345678,
-    skills: 0,
-    amount_training_days: 0,
-    match_day: 0,
-  },
-  {
-    id: 1,
-    firstname: "Sjoerd",
-    lastname: "Reen",
-    email: "test@test.com",
-    phone: 0612345678,
-    skills: 0,
-    amount_training_days: 3,
-    match_day: 0,
-  },
-];
 
 app.use(express.static("src"));
 app.use("/css", express.static(__dirname + "src/css"));
 app.use("/js", express.static(__dirname + "./src/js"));
 app.use("/img", express.static(__dirname + "src/img"));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // set the view engine to ejs
 app.use(expressLayouts);
@@ -50,10 +22,44 @@ app.set("view engine", "ejs");
 // ROUTES
 // home
 app.get("/", (req, res) => {
-  fetch(`http://localhost:8000/users`)
-    .then((res) => res.json())
-    .then((data) => {
-      res.render("pages/index", { title: "Home", data: data });
+  let searchCriteria;
+
+  // Call the searchCriteria API
+  fetch("http://localhost:8000/searchCriteria")
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        return Promise.reject(response);
+      }
+    })
+    .then(function (data) {
+      // Store the searchCriteria data to a variable
+      searchCriteria = data;
+
+      // Fetch users
+      return fetch("http://localhost:8000/users");
+    })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        return Promise.reject(response);
+      }
+    })
+    .then((userData) => {
+      const filteredData = userData.filter((item) => {
+        return (
+          item.skills === searchCriteria.skills &&
+          item.amount_training_days === searchCriteria.amount_training_days &&
+          item.match_day === searchCriteria.match_day
+        );
+      });
+
+      res.render("pages/index", { title: "Home", data: filteredData });
+    })
+    .catch(function (error) {
+      console.warn(error);
     });
 });
 
@@ -65,6 +71,17 @@ app.get("/person/:id", (req, res) => {
         title: `${data.firstname} ${data.lastname}`,
         data: data,
       });
+    });
+});
+
+app.post("/search_criteria", (req, res) => {
+  axios
+    .put("http://localhost:8000/searchCriteria", req.body)
+    .then((request) => {
+      res.redirect("/");
+    })
+    .catch((err) => {
+      console.error(err);
     });
 });
 

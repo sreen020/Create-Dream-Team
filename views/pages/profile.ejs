@@ -1,29 +1,29 @@
 <section>
   <h1>Profiel page</h1>
 
-  <form>
+  <form action="/search_criteria" method="post">
     <fieldset>
       <legend>Profielgegevens</legend>
 
-      <div>
+      <!-- <div>
         <label for="firstname">Voornaam</label>
-        <input id="firstname" type="text" />
+        <input id="firstname" name="firstname" type="text" />
       </div>
 
       <div>
         <label for="lastname">Achternaam</label>
-        <input id="lastname" type="text" />
+        <input id="lastname" name="lastname" type="text" />
       </div>
 
       <div>
         <label for="email">Email</label>
-        <input id="email" type="email" />
+        <input id="email" name="email" type="email" />
       </div>
 
       <div>
         <label for="phone_number">Telefoonnummer</label>
-        <input id="phone_number" type="tel" />
-      </div>
+        <input id="phone_number" name="phone_number" type="tel" />
+      </div> -->
 
       <div>
         <label for="skills">Voetbal Skills</label>
@@ -49,10 +49,10 @@
 
       <div>
         <label for="matchday">Matchday</label>
-        <select name="matchday" id="matchday">
+        <select name="match_day" id="matchday">
           <option disabled selected>Selecteer dag</option>
-          <option value="saturday">Zaterdag</option>
-          <option value="sunday">Zondag</option>
+          <option value="0">Zaterdag</option>
+          <option value="1">Zondag</option>
         </select>
       </div>
     </fieldset>

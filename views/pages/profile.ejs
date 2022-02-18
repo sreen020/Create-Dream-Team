@@ -1,61 +1,248 @@
 <section>
-  <h1>Profiel page</h1>
+    <h1>Profiel page</h1>
 
-  <form action="/search_criteria" method="post">
-    <fieldset>
-      <legend>Profielgegevens</legend>
+    <div class="container">
+        <h2 class="title">Create a new account</h2>
+        <form action="#" class="form">
+            <div class="input-group">
+                <label for="firstname">Voornaam</label>
+                <input id="firstname" placeholder="John" type="text" class="input" name="firstname" />
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
 
-      <!-- <div>
-        <label for="firstname">Voornaam</label>
-        <input id="firstname" name="firstname" type="text" />
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
+            </div>
+
+            <div class="input-group">
+                <label for="lastname">Achternaam</label>
+                <input id="lastname" placeholder="John" type="text" class="input" name="lastname" />
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
+            </div>
+
+            <div class="input-group">
+                <label for="email" class="label">Email</label>
+                <input name="email" id="email" type="email" class="input" autocomplete placeholder="email@email.com" />
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
+            </div>
+
+            <div class="input-group">
+                <label for="zipcode">Postcode</label>
+                <input id="zipcode" placeholder="1234AA" type="text" class="input" name="zipcode" />
+                <span id="zipcode_error"></span>
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
+            </div>
+            <div class="input-group">
+                <label for="house_number">Huisnummer (zonder toevoeging)</label>
+                <input id="house_number" placeholder="123" type="text" class="input" name="house_number" />
+
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
+            </div>
+            <div class="input-group">
+                <label for="city">Stad</label>
+                <input disabled id="city" placeholder="123" type="text" class="input" name="city" />
+
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
+            </div>
+            <div class="input-group">
+                <label for="street_name">Straatnaam</label>
+                <input disabled id="street_name" placeholder="123" type="text" class="input" name="street_name" />
+
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
+            </div>
+
+            <div class="input-group">
+                <label for="password" class="label">Password</label>
+                <input id="password" type="password" class="input" />
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
+            </div>
+
+            <div class="input-group">
+                <label for="password_confirmation" class="label">Password Confirmation</label
+        >
+        <input id="password_confirmation" type="password" class="input" />
+        <span class="error-message"></span>
+        <svg
+          class="icon icon-success hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        <svg
+          class="icon icon-error hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
       </div>
 
-      <div>
-        <label for="lastname">Achternaam</label>
-        <input id="lastname" name="lastname" type="text" />
-      </div>
+      <input type="submit" class="button" value="Create account" />
+    </form>
 
-      <div>
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" />
-      </div>
+    <form action="/search_criteria" method="post">
+      <fieldset>
+        <legend>Zoekgegevens</legend>
+        <div class="input-group">
+          <label for="skills">Voetbal Skills</label>
+                <select class="input" name="skills" id="skills">
+            <option disabled selected>Selecteer jouw skill</option>
+            <option value="3">Kan werkelijk voetballen</option>
+            <option value="2">Zogenaamde prof</option>
+            <option value="1">Gewoon slecht</option>
+            <option value="0">Extreem belabberd</option>
+          </select>
+            </div>
 
-      <div>
-        <label for="phone_number">Telefoonnummer</label>
-        <input id="phone_number" name="phone_number" type="tel" />
-      </div> -->
+            <div class="input-group">
+                <label for="amount_training_days">Hoe vaak wil je trainen?</label>
+                <select class="input" name="amount_training_days" id="amount_training_days">
+            <option disabled selected>Selecteer aantal dagen</option>
+            <option value="1">1x per week</option>
+            <option value="2">2x per week</option>
+            <option value="3">3x per week</option>
+            <option value="4">3+ keer per week</option>
+          </select>
+            </div>
 
-      <div>
-        <label for="skills">Voetbal Skills</label>
-        <select name="skills" id="skills">
-          <option disabled selected>Selecteer jouw skill</option>
-          <option value="3">Kan werkelijk voetballen</option>
-          <option value="2">Zogenaamde prof</option>
-          <option value="1">Gewoon slecht</option>
-          <option value="0">Extreem belabberd</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="amount_training_days">Hoe vaak wil je trainen?</label>
-        <select name="amount_training_days" id="amount_training_days">
-          <option disabled selected>Selecteer aantal dagen</option>
-          <option value="1">1x per week</option>
-          <option value="2">2x per week</option>
-          <option value="3">3x per week</option>
-          <option value="4">3+ keer per week</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="matchday">Matchday</label>
-        <select name="match_day" id="matchday">
-          <option disabled selected>Selecteer dag</option>
-          <option value="0">Zaterdag</option>
-          <option value="1">Zondag</option>
-        </select>
-      </div>
-    </fieldset>
-    <button>Submit</button>
-  </form>
+            <div class="input-group">
+                <label for="matchday">Matchday</label>
+                <select class="input" name="match_day" id="matchday">
+            <option disabled selected>Selecteer dag</option>
+            <option value="0">Zaterdag</option>
+            <option value="1">Zondag</option>
+          </select>
+            </div>
+            </fieldset>
+            <button>Submit</button>
+        </form>
+    </div>
 </section>

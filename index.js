@@ -33,8 +33,7 @@ app.get("/", (req, res) => {
         return Promise.reject(response);
       }
     })
-    .then(function (data) {
-      // Store the searchCriteria data to a variable
+    .then((data) => {
       searchCriteria = data;
 
       // Fetch users
@@ -58,7 +57,7 @@ app.get("/", (req, res) => {
 
       res.render("pages/index", { title: "Home", data: filteredData });
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.warn(error);
     });
 });

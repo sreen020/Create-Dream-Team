@@ -24,7 +24,7 @@ const validateOnSubmit = () => {
 const validateOnEntry = () => {
     fields.forEach((field, index) => {
         const input = form.querySelector(`#${fields[index]}`);
-        input.addEventListener("change", (event) => {
+        input.addEventListener("input", (event) => {
             validateFields(input);
         });
     });

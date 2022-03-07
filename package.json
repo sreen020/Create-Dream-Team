@@ -1,34 +1,33 @@
 {
-  "name": "blok-tech-2022",
-  "description": "Matching app blok-tech",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "dev": "node index.js",
-    "watch": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sreen020/blok-tech-2022.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "axios": "^0.26.0",
-    "body-parser": "^1.19.1",
-    "ejs": "^3.1.6",
-    "express": "^4.17.2",
-    "express-ejs-layouts": "^2.5.1",
-    "mongodb": "^4.4.0",
-    "mongoose": "^6.2.4",
-    "node-fetch": "2.6.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  },
-  "bugs": {
-    "url": "https://github.com/sreen020/blok-tech-2022/issues"
-  },
-  "homepage": "https://github.com/sreen020/blok-tech-2022#readme"
+	"name": "blok-tech-2022",
+	"description": "Matching app blok-tech",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"dev": "node index.js",
+		"watch": "nodemon index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sreen020/blok-tech-2022.git"
+	},
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"axios": "^0.26.0",
+		"body-parser": "^1.19.1",
+		"dotenv": "^16.0.0",
+		"ejs": "^3.1.6",
+		"express": "^4.17.2",
+		"express-ejs-layouts": "^2.5.1",
+		"mongodb": "^4.4.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	},
+	"bugs": {
+		"url": "https://github.com/sreen020/blok-tech-2022/issues"
+	},
+	"homepage": "https://github.com/sreen020/blok-tech-2022#readme"
 }

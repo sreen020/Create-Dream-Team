@@ -28,9 +28,6 @@ main {
 aside {
 	padding: 1.5rem;
 }
-aside h2 {
-	padding-bottom: 1rem;
-}
 
 aside li {
 	padding: 1rem;
@@ -81,6 +78,36 @@ a {
 .field-container {
 	display: flex;
 	justify-content: center;
+}
+
+.title-section {
+	display: flex;
+	align-items: center;
+	/* justify-content: space-between; */
+	padding-bottom: 1rem;
+}
+
+.title-section svg {
+	height: 1.5rem;
+	margin-left: 0.6rem;
+}
+
+.dropdown input[type='checkbox'] {
+	display: none;
+}
+
+.dropdown article {
+	display: none;
+	position: absolute;
+	padding: 1rem;
+	width: 12rem;
+	background: white;
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+		0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+input[type='checkbox']:checked ~ article {
+	display: block;
 }
 
 .soccer-field {

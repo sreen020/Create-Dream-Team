@@ -1,16 +1,82 @@
 <section class="home-container">
 	<aside>
-		<h2>Create your team</h2>
+		<div class="title-section">
+			<h2>Create your team</h2>
+
+			<div class="dropdown">
+				<input type="checkbox" id="checkbox-toggle" />
+				<label for="checkbox-toggle">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-6 w-6"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+						stroke-width="2"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+						/>
+					</svg>
+				</label>
+				<article>
+					<h4>Filter op:</h4>
+
+					<form action="/filter-users" method="GET" class="form">
+						<div class="input-group">
+							<label for="position">Positie</label>
+							<select class="input" name="position" id="position">
+								<option value="" disabled selected>Selecteer positie</option>
+								<option value="A">Aanvaller</option>
+								<option value="M">Middenveld</option>
+								<option value="V">Verdediger</option>
+								<option value="K">Keeper</option>
+							</select>
+						</div>
+
+						<div class="input-group">
+							<label for="footed">Beste been</label>
+							<select class="input" name="footed" id="footed">
+								<option value="" disabled selected>Selecteer been</option>
+								<option value="L">Links</option>
+								<option value="R">Rechts</option>
+							</select>
+						</div>
+
+						<div class="input-group">
+							<label for="matchday">Matchday</label>
+							<select class="input" name="match_day" id="matchday">
+								<option value="" disabled selected>Selecteer dag</option>
+								<option value="saturday">Zaterdag</option>
+								<option value="sunday">Zondag</option>
+							</select>
+						</div>
+
+						<button type="submit" class="button">Submit</button>
+					</form>
+				</article>
+			</div>
+		</div>
 
 		<ul>
 			<% data.forEach((item, index)=> {%>
 			<li>
-				<a href="person/<%= item.id %>">
+				<a href="person/<%= item._id %>">
 					<div class="person-card-outer">
-						<span>99</span>
+						<span><%= item.rating %></span>
 						<div>
 							<h4><%=item.firstname%> <%=item.lastname%></h4>
-							<p>Position: V</p>
+							<% switch (item.position) { case 'A' : %>
+							<p>Position: Aanvaller</p>
+							<% break; case 'M' : %>
+							<p>Position: Middenveld</p>
+							<% break; case 'V' : %>
+							<p>Position: Verdediger</p>
+							<% break; case 'K' : %>
+							<p>Position: Keeper</p>
+							<% break; } %>
 						</div>
 					</div>
 				</a>

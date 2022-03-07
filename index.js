@@ -1,13 +1,11 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
-const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 const axios = require('axios');
-// const mongoose = require("mongoose");
+const dotenv = require('dotenv').config();
+const { MongoClient, ObjectId } = require('mongodb');
 
 const app = express();
-
-// mongoose.connect("mongodb://localhost/data");
 
 app.use(express.static('src'));
 
@@ -19,59 +17,85 @@ app.use(expressLayouts);
 app.set('layout', './partials/layout');
 app.set('view engine', 'ejs');
 
+/*****************************************************
+ * Connect to database
+ ****************************************************/
+let db = null;
+
+async function connectDB() {
+	const uri = process.env.DB_URI;
+	const client = new MongoClient(uri, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	});
+	try {
+		await client.connect();
+		db = client.db(process.env.DB_NAME);
+	} catch (error) {
+		throw error;
+	}
+}
 // ROUTES
-// home
-app.get('/', (req, res) => {
-	let searchCriteria;
+// Home page
+app.get('/', async (req, res) => {
+	const query = {};
+	const options = { sort: { rating: -1 } };
+	const users = await db.collection('users').find(query, options).toArray();
+	console.log(users);
 
-	// Call the searchCriteria API
-	fetch('http://localhost:8000/users')
-		.then((response) => {
-			if (response.ok) {
-				return response.json();
-			} else {
-				return Promise.reject(response);
-			}
-		})
-		.then((data) => {
-			res.render('pages/index', { title: 'Home', data: data });
-		})
-		.catch((error) => {
-			console.warn(error);
-		});
+	res.render('pages/index', { title: 'Home', data: users });
 });
 
-app.get('/person/:id', (req, res) => {
-	fetch(`http://localhost:8000/users/${req.params.id}`)
-		.then((res) => res.json())
-		.then((data) => {
-			res.render('pages/personDetail', {
-				title: `${data.firstname} ${data.lastname}`,
-				data: data,
-			});
-		});
+// Detail page person
+app.get('/person/:id', async (req, res) => {
+	const query = { _id: ObjectId(req.params.id) };
+	const person = await db.collection('users').findOne(query);
+
+	res.render('pages/personDetail', {
+		title: `${person.firstname} ${person.lastname}`,
+		data: person,
+	});
 });
 
-app.post('/search_criteria', (req, res) => {
-	axios
-		.put('http://localhost:8000/searchCriteria', req.body)
-		.then((request) => {
-			res.redirect('/');
-		})
-		.catch((err) => {
-			console.error(err);
-		});
+app.post('/add-user', async (req, res) => {
+	console.log(req.body);
+
+	let newPerson = {
+		firstname: req.body.firstname,
+		lastname: req.body.lastname,
+		email: req.body.email,
+		zipcode: req.body.zipcode,
+		house_number: req.body.house_number,
+		position: req.body.position,
+		footed: req.body.footed,
+		experience: req.body.experience,
+		match_day: req.body.match_day,
+		rating: req.body.rating,
+	};
+
+	await db.collection('users').insertOne(newPerson);
+	res.redirect('/');
 });
 
-// Pagina om jouw zoek criteria aan te geven
+app.get('/filter-users', async (req, res) => {
+	console.log(req.query);
+	const query = req.query;
+	const persons = await db.collection('users').find(query).toArray();
+
+	res.render('pages/index', { title: 'Home', data: persons });
+});
+
+// Pagina om nieuw account aan te maken
 app.get('/profile', (req, res) => {
 	res.render('pages/profile', { title: 'Profile' });
 });
 
+// 404 page
 app.use('*', (req, res) => {
 	res.render('pages/404', { title: '404 page' });
 });
 
 app.listen(3000, () => {
 	console.log('listening on 3000');
+	connectDB().then(() => console.log('connected mongoDB'));
 });

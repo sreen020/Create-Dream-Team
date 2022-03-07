@@ -1,8 +1,10 @@
 {
   "searchCriteria": {
-    "skills": "0",
-    "amount_training_days": "1",
-    "match_day": "0"
+    "position": "V",
+    "footed": "M",
+    "experience": "12",
+    "match_day": "0",
+    "rating": "99"
   },
   "users": [
     {

@@ -9,6 +9,11 @@ const fields = [
     "street_name",
     "password",
     "password_confirmation",
+    "position",
+    "footed",
+    "experience",
+    "matchday",
+    "rating",
 ];
 
 const validateOnSubmit = () => {
@@ -57,6 +62,18 @@ const validateFields = (field) => {
             setStatus(field, "Password confermation is required", "error");
         } else if (field.value !== passwordField.value) {
             setStatus(field, "Wachtwoorden matchen niet!", "error");
+        } else {
+            setStatus(field, null, "succes");
+        }
+    }
+
+    if (field.id === "rating") {
+        const passwordField = form.querySelector("#rating");
+
+        if (field.value.trim() === "") {
+            setStatus(field, "Waarde mag niet leeg zijn", "error");
+        } else if (field.value < 1 || field.value > 100) {
+            setStatus(field, "Waarde moet tussen de 1 en de 100 zijn!", "error");
         } else {
             setStatus(field, null, "succes");
         }

@@ -1,7 +1,38 @@
-<% data.forEach((item, index) => {%>
-<a href="person/<%= item.id %>">
-  <article>
-    <h2><%=item.firstname%> <%=item.lastname%></h2>
-  </article>
-</a>
-<% });%>
+<section class="home-container">
+	<aside>
+		<h2>Create your team</h2>
+
+		<ul>
+			<% data.forEach((item, index)=> {%>
+			<li>
+				<a href="person/<%= item.id %>">
+					<div class="person-card-outer">
+						<span>99</span>
+						<div>
+							<h4><%=item.firstname%> <%=item.lastname%></h4>
+							<p>Position: V</p>
+						</div>
+					</div>
+				</a>
+			</li>
+			<% });%>
+		</ul>
+	</aside>
+
+	<section class="field-container">
+		<div class="soccer-field">
+			<div class="col-span-4">+ Front</div>
+			<div class="col-span-4">+ Front</div>
+			<div class="col-span-4">+ Front</div>
+
+			<div class="col-span-4">+ Middle</div>
+			<div class="col-span-4">+ Middle</div>
+			<div class="col-span-4">+ Middle</div>
+
+			<div class="col-span-3">+ Back</div>
+			<div class="col-span-3">+ Back</div>
+			<div class="col-span-3">+ Back</div>
+			<div class="col-span-3">+ Back</div>
+		</div>
+	</section>
+</section>

@@ -60,6 +60,16 @@
 			</div>
 		</div>
 
+		<div class="active-filter-badges">
+			<%if (activeFilters.position) { %>
+			<p>Position</p>
+			<% } %> <%if (activeFilters.footed) { %>
+			<p>Footed</p>
+			<% } %> <%if (activeFilters.match_day) { %>
+			<p>match day</p>
+			<% } %>
+		</div>
+
 		<ul>
 			<% data.forEach((item, index)=> {%>
 			<li>

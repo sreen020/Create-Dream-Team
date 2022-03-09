@@ -43,7 +43,11 @@ app.get('/', async (req, res) => {
 	const users = await db.collection('users').find(query, options).toArray();
 	console.log(users);
 
-	res.render('pages/index', { title: 'Home', data: users });
+	res.render('pages/index', {
+		title: 'Home',
+		data: users,
+		activeFilters: req.query,
+	});
 });
 
 // Detail page person
@@ -82,7 +86,11 @@ app.get('/filter-users', async (req, res) => {
 	const query = req.query;
 	const persons = await db.collection('users').find(query).toArray();
 
-	res.render('pages/index', { title: 'Home', data: persons });
+	res.render('pages/index', {
+		title: 'Home',
+		data: persons,
+		activeFilters: req.query,
+	});
 });
 
 // Pagina om nieuw account aan te maken

@@ -124,9 +124,10 @@ input[type='checkbox']:checked ~ article {
 .soccer-field div {
 	width: 100%;
 	color: white;
-	padding: 2rem 1rem;
+	padding: 1rem 2rem;
 	display: flex;
 	justify-content: center;
+	max-height: 8rem;
 }
 
 .col-span-4 {
@@ -134,6 +135,21 @@ input[type='checkbox']:checked ~ article {
 }
 .col-span-3 {
 	grid-column: span 3;
+}
+.grid-start-6 {
+	grid-column-start: 6;
+}
+
+.person-card-list {
+	padding-bottom: 3rem;
+}
+
+.field-position .draggable-card p {
+	display: none;
+}
+
+.draggable-card ~ .position-name {
+	display: none;
 }
 
 .person-card-outer {

@@ -70,9 +70,18 @@
 			<% } %>
 		</div>
 
-		<ul>
+		<ul
+			class="person-card-list"
+			ondragover="onDragOver(event);"
+			ondrop="onDrop(event);"
+		>
 			<% data.forEach((item, index)=> {%>
-			<li>
+			<li
+				class="draggable-card"
+				id="draggable-card-<%= index %>"
+				draggable="true"
+				ondragstart="onDragStart(event);"
+			>
 				<a href="person/<%= item._id %>">
 					<div class="person-card-outer">
 						<span><%= item.rating %></span>
@@ -97,18 +106,87 @@
 
 	<section class="field-container">
 		<div class="soccer-field">
-			<div class="col-span-4">+ Front</div>
-			<div class="col-span-4">+ Front</div>
-			<div class="col-span-4">+ Front</div>
+			<div
+				class="field-position col-span-4"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p class="position-name">+ Front DRAG</p>
+			</div>
+			<div
+				class="field-position col-span-4"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p class="position-name">+ Front</p>
+			</div>
+			<div
+				class="field-position col-span-4"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p></p>
+				<p class="position-name">+ Front</p>
+			</div>
 
-			<div class="col-span-4">+ Middle</div>
-			<div class="col-span-4">+ Middle</div>
-			<div class="col-span-4">+ Middle</div>
+			<div
+				class="field-position col-span-4"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p class="position-name">+ Middle</p>
+			</div>
+			<div
+				class="field-position col-span-4"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p class="position-name">+ Middle</p>
+			</div>
+			<div
+				class="field-position col-span-4"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p class="position-name">+ Middle</p>
+			</div>
 
-			<div class="col-span-3">+ Back</div>
-			<div class="col-span-3">+ Back</div>
-			<div class="col-span-3">+ Back</div>
-			<div class="col-span-3">+ Back</div>
+			<div
+				class="field-position col-span-3"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p class="position-name">+ Back</p>
+			</div>
+			<div
+				class="field-position col-span-3"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p class="position-name">+ Back</p>
+			</div>
+			<div
+				class="field-position col-span-3"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p class="position-name">+ Back</p>
+			</div>
+			<div
+				class="field-position col-span-3"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p class="position-name">+ Back</p>
+			</div>
+
+			<div
+				class="field-position col-span-4 grid-start-6"
+				ondragover="onDragOver(event);"
+				ondrop="onDrop(event);"
+			>
+				<p class="position-name">+ Keeper</p>
+			</div>
 		</div>
 	</section>
 </section>

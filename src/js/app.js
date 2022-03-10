@@ -15,25 +15,25 @@ zipcode.addEventListener('input', () => {
 houseNum.addEventListener('input', () => validateAdres());
 
 const validateAdres = () => {
-	const city = document.getElementById('city');
-	const streetName = document.getElementById('street_name');
+	zipcode.value.length === 6 && houseNum.value && fetchAdres();
 
-	if (zipcode.value.length === 6 && houseNum.value) {
-		axios
-			.get(
-				`https://postcode.tech/api/v1/postcode/full?postcode=${zipcode.value}&number=${houseNum.value}`,
-				{
-					headers: {
-						Authorization: 'Bearer ' + '02eac706-b8f3-455c-a1f5-3272692676a1',
-					},
-				}
-			)
-			.then((response) => {
-				console.log(response);
-				city.value = response.data.city;
-				streetName.value = response.data.street;
-			});
-	} else {
-		console.log('Iets is onjuist');
+	async function fetchAdres() {
+		const city = document.getElementById('city');
+		const streetName = document.getElementById('street_name');
+
+		const url = `https://postcode.tech/api/v1/postcode/full?postcode=${zipcode.value}&number=${houseNum.value}`;
+		const options = {
+			headers: {
+				Authorization: 'Bearer ' + '02eac706-b8f3-455c-a1f5-3272692676a1',
+			},
+		};
+
+		const response = await fetch(url, options);
+		const data = await response.json();
+
+		console.log(data);
+
+		data.city ? (city.value = data.city) : (city.value = '');
+		data.street ? (streetName.value = data.street) : (streetName.value = '');
 	}
 };

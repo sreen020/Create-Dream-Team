@@ -1,18 +1,18 @@
-console.log('test');
-
 const zipcode = document.getElementById('zipcode');
 const houseNum = document.getElementById('house_number');
 
-zipcode.addEventListener('input', () => {
-	const zipcodeError = document.getElementById('zipcode_error');
-	if (zipcode.value.length !== 6) {
-		zipcodeError.innerText = 'Postcode voldoet niet aan juiste formaat';
-	} else {
-		zipcodeError.innerText = '';
-		validateAdres();
-	}
-});
-houseNum.addEventListener('input', () => validateAdres());
+const validateInit = () => {
+	zipcode.addEventListener('input', () => {
+		const zipcodeError = document.getElementById('zipcode_error');
+		if (zipcode.value.length !== 6) {
+			zipcodeError.innerText = 'Postcode voldoet niet aan juiste formaat';
+		} else {
+			zipcodeError.innerText = '';
+			validateAdres();
+		}
+	});
+	houseNum.addEventListener('input', () => validateAdres());
+};
 
 const validateAdres = () => {
 	zipcode.value.length === 6 && houseNum.value && fetchAdres();
@@ -37,3 +37,5 @@ const validateAdres = () => {
 		data.street ? (streetName.value = data.street) : (streetName.value = '');
 	}
 };
+
+document.getElementById('add-person-section') && validateInit();

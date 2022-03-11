@@ -104,6 +104,7 @@ a {
 	background: white;
 	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
 		0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	z-index: 2;
 }
 
 input[type='checkbox']:checked ~ article {
@@ -114,11 +115,12 @@ input[type='checkbox']:checked ~ article {
 	background-image: url('../img/soccer_field.png');
 	background-size: 100% auto;
 	background-repeat: no-repeat;
-	height: 31.5rem;
-	width: 40rem;
+	height: 43.5rem;
+	width: 56rem;
 
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(4, 1fr);
 }
 
 .soccer-field div {
@@ -129,7 +131,9 @@ input[type='checkbox']:checked ~ article {
 	justify-content: center;
 	max-height: 8rem;
 }
-
+.col-span-12 {
+	grid-column: span 12;
+}
 .col-span-4 {
 	grid-column: span 4;
 }
@@ -142,14 +146,31 @@ input[type='checkbox']:checked ~ article {
 
 .person-card-list {
 	padding-bottom: 3rem;
+	position: relative;
+}
+
+#drop-here {
+	position: absolute;
+	bottom: 1rem;
+	margin: auto;
+	width: 100%;
+	text-align: center;
 }
 
 .field-position .draggable-card p {
 	display: none;
 }
 
+.field-position .draggable-card h4 {
+	color: white;
+}
+
 .draggable-card ~ .position-name {
 	display: none;
+}
+
+.position-name {
+	align-self: center;
 }
 
 .person-card-outer {

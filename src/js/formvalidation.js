@@ -116,7 +116,9 @@ const setStatus = (field, message, status) => {
 	}
 };
 
-validateOnSubmit();
-validateOnEntry();
+if (document.getElementById('add-person-section')) {
+	validateOnSubmit();
+	validateOnEntry();
+}
 
 // TODO: Disable button until all is green

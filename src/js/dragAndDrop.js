@@ -1,7 +1,8 @@
 function onDragStart(event) {
 	event.dataTransfer.setData('text/plain', event.target.id);
 
-	console.log('THIS', event.target.parentNode);
+	const dropHereIndicator = document.getElementById('drop-here');
+	dropHereIndicator.classList.remove('hidden');
 	const container = event.target.parentNode;
 
 	if (container.querySelector('.position-name')) {
@@ -31,6 +32,9 @@ function onDrop(event) {
 	}
 
 	dropzone.appendChild(draggableElement);
+
+	const dropHereIndicator = document.getElementById('drop-here');
+	dropHereIndicator.classList.add('hidden');
 
 	event.dataTransfer.clearData();
 }

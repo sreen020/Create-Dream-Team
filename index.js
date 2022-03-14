@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config();
 const { MongoClient, ObjectId } = require('mongodb');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.static('src'));
 
@@ -94,8 +95,8 @@ app.get('/filter-users', async (req, res) => {
 });
 
 // Pagina om nieuw account aan te maken
-app.get('/profile', (req, res) => {
-	res.render('pages/profile', { title: 'Profile' });
+app.get('/add-acount', (req, res) => {
+	res.render('pages/addAcount', { title: 'Profile' });
 });
 
 // 404 page
@@ -103,7 +104,7 @@ app.use('*', (req, res) => {
 	res.render('pages/404', { title: '404 page' });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
 	console.log('listening on 3000');
 	connectDB().then(() => console.log('connected mongoDB'));
 });

@@ -169,6 +169,21 @@ input[type='checkbox']:checked ~ article {
 	display: none;
 }
 
+.draggable-card,
+.draggable-card a {
+	cursor: all-scroll;
+}
+
+.position-name {
+	background: linear-gradient(
+		0deg,
+		rgba(234, 249, 231, 1) 0%,
+		rgba(192, 230, 186, 1) 100%
+	);
+	padding: 0.5rem 1rem;
+	color: var(--color-dark);
+	border-radius: 0.7rem;
+}
 .position-name {
 	align-self: center;
 }

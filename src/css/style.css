@@ -263,7 +263,7 @@ input[type='checkbox']:checked ~ article {
 	width: 24px;
 	height: 24px;
 	position: absolute;
-	top: 32px;
+	top: 27px;
 	right: 5px;
 	pointer-events: none;
 	z-index: 2;
@@ -278,14 +278,9 @@ input[type='checkbox']:checked ~ article {
 }
 
 .container {
-	max-width: 460px;
-	margin: 3rem auto;
 	padding: 3rem;
-	border: 1px solid #ddd;
 	border-radius: 0.25rem;
 	background-color: white;
-	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-		0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .label {
@@ -294,6 +289,12 @@ input[type='checkbox']:checked ~ article {
 	color: #333;
 	margin-bottom: 0.25rem;
 	color: #2d3748;
+}
+
+.form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
 }
 
 .input {
@@ -353,4 +354,16 @@ input[type='checkbox']:checked ~ article {
 
 .button:hover {
 	filter: brightness(110%);
+}
+
+#add-person-section {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.image-container {
+	background-image: url('../img/soccer-ball.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 95vh;
 }

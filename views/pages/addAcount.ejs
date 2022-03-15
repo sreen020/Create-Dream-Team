@@ -1,5 +1,5 @@
 <section id="add-person-section">
-	<h1>Profiel page</h1>
+	<section class="image-container"></section>
 
 	<div class="container">
 		<h2 class="title">Create a new account</h2>
@@ -269,7 +269,12 @@
 
 			<div class="input-group">
 				<label for="password" class="label">Password</label>
-				<input id="password" type="password" class="input" />
+				<input
+					id="password"
+					type="password"
+					class="input"
+					placeholder="Password"
+				/>
 				<span class="error-message"></span>
 				<svg
 					class="icon icon-success hidden"
@@ -302,7 +307,12 @@
 				<label for="password_confirmation" class="label"
 					>Password Confirmation</label
 				>
-				<input id="password_confirmation" type="password" class="input" />
+				<input
+					id="password_confirmation"
+					type="password"
+					class="input"
+					placeholder="Password Confirmation"
+				/>
 				<span class="error-message"></span>
 				<svg
 					class="icon icon-success hidden"
@@ -412,6 +422,7 @@
 					class="input"
 					name="experience"
 					id="experience"
+					placeholder="Aantal jaren"
 				/>
 				<span class="error-message"></span>
 				<svg
@@ -477,7 +488,7 @@
 			</div>
 
 			<div class="input-group">
-				<label for="rating">Geef jezelf een algemene score (0 - 100)</label>
+				<label for="rating">Geef jezelf een algemene score</label>
 				<input
 					required
 					class="input"
@@ -486,6 +497,7 @@
 					id="rating"
 					min="0"
 					max="100"
+					placeholder="0 - 100"
 				/>
 				<span class="error-message"></span>
 				<svg

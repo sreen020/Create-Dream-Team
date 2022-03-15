@@ -1,6 +1,6 @@
 {
-	"name": "blok-tech-2022",
-	"description": "Matching app blok-tech",
+	"name": "create-dream-team",
+	"description": "Create your own soccer dreamteam using the drag and drop",
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
@@ -10,12 +10,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/sreen020/blok-tech-2022.git"
+		"url": "git+https://github.com/sreen020/Create-Dream-Team.git"
 	},
 	"author": "",
 	"license": "MIT",
 	"dependencies": {
-		"axios": "^0.26.0",
 		"body-parser": "^1.19.1",
 		"dotenv": "^16.0.0",
 		"ejs": "^3.1.6",
@@ -27,7 +26,7 @@
 		"nodemon": "^2.0.15"
 	},
 	"bugs": {
-		"url": "https://github.com/sreen020/blok-tech-2022/issues"
+		"url": "https://github.com/sreen020/Create-Dream-Team/issues"
 	},
-	"homepage": "https://github.com/sreen020/blok-tech-2022#readme"
+	"homepage": "https://github.com/sreen020/Create-Dream-Team#readme"
 }

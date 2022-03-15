@@ -1,7 +1,6 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
-const axios = require('axios');
 const dotenv = require('dotenv').config();
 const { MongoClient, ObjectId } = require('mongodb');
 

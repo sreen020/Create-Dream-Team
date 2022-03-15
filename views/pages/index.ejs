@@ -1,5 +1,6 @@
 <section class="home-container">
 	<aside>
+		<p><%= data.length %> spelers gevonden</p>
 		<div class="title-section">
 			<h2>Create your team</h2>
 
@@ -69,6 +70,14 @@
 			<p>match day</p>
 			<% } %>
 		</div>
+
+		<% if(data.length < 1) {%>
+		<p>Geen spelers gevonden.</p>
+
+		<p>
+			<a href="/">Klik hier om de filters te verwijderen</a>
+		</p>
+		<% } %>
 
 		<ul
 			class="person-card-list"

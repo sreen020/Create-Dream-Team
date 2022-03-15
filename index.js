@@ -36,13 +36,15 @@ async function connectDB() {
 		throw error;
 	}
 }
-// ROUTES
+
+/*****************************************************
+ * Routes
+ ****************************************************/
+
 // Home page
 app.get('/', async (req, res) => {
-	const query = {};
 	const options = { sort: { rating: -1 } };
-	const users = await db.collection('users').find(query, options).toArray();
-	console.log(users);
+	const users = await db.collection('users').find({}, options).toArray();
 
 	res.render('pages/index', {
 		title: 'Home',
@@ -62,9 +64,8 @@ app.get('/person/:id', async (req, res) => {
 	});
 });
 
+// Create a user post form
 app.post('/add-user', async (req, res) => {
-	console.log(req.body);
-
 	let newPerson = {
 		firstname: req.body.firstname,
 		lastname: req.body.lastname,
@@ -82,6 +83,7 @@ app.post('/add-user', async (req, res) => {
 	res.redirect('/');
 });
 
+// Filter users
 app.get('/filter-users', async (req, res) => {
 	console.log(req.query);
 	const query = req.query;
@@ -94,7 +96,7 @@ app.get('/filter-users', async (req, res) => {
 	});
 });
 
-// Pagina om nieuw account aan te maken
+// Create user page
 app.get('/add-acount', (req, res) => {
 	res.render('pages/addAcount', { title: 'Profile' });
 });

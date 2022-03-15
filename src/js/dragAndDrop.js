@@ -2,7 +2,9 @@ function onDragStart(event) {
 	event.dataTransfer.setData('text/plain', event.target.id);
 
 	const dropHereIndicator = document.getElementById('drop-here');
-	dropHereIndicator.classList.remove('hidden');
+	setTimeout(() => {
+		dropHereIndicator.classList.remove('hidden');
+	}, 200);
 	const container = event.target.parentNode;
 
 	if (container.querySelector('.position-name')) {

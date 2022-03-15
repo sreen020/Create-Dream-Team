@@ -3,6 +3,7 @@
 	--color-light: #c0e6ba;
 	--color-medium: #4ca771;
 	--color-dark: #013237;
+	--color-text: #3f3f3f;
 }
 
 * {
@@ -13,15 +14,8 @@
 
 body {
 	margin: 0;
-	padding-bottom: 3rem;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
 		Arial, sans-serif;
-}
-
-/* remove */
-main {
-	height: 100vh;
-	padding-top: 1.5rem;
 }
 
 /* global styles  */
@@ -47,6 +41,26 @@ li {
 
 a {
 	text-decoration: none;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li {
+	color: var(--color-text);
 }
 
 /* NAVBAR */
@@ -78,6 +92,8 @@ a {
 .field-container {
 	display: flex;
 	justify-content: center;
+	background: var(--color-medium);
+	padding-top: 4rem;
 }
 
 .title-section {
@@ -121,6 +137,7 @@ input[type='checkbox']:checked ~ article {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(4, 1fr);
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .soccer-field div {
@@ -147,14 +164,28 @@ input[type='checkbox']:checked ~ article {
 .person-card-list {
 	padding-bottom: 3rem;
 	position: relative;
+	height: 82vh;
+	overflow: auto;
 }
 
 #drop-here {
 	position: absolute;
-	bottom: 1rem;
-	margin: auto;
+	height: 100%;
 	width: 100%;
-	text-align: center;
+	border: 3px solid var(--color-dark);
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.4);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+#drop-here.hidden {
+	display: none;
 }
 
 .field-position .draggable-card p {
@@ -183,9 +214,8 @@ input[type='checkbox']:checked ~ article {
 	padding: 0.5rem 1rem;
 	color: var(--color-dark);
 	border-radius: 0.7rem;
-}
-.position-name {
 	align-self: center;
+	font-weight: 600;
 }
 
 .person-card-outer {
@@ -198,11 +228,6 @@ input[type='checkbox']:checked ~ article {
 	padding: 0.7rem;
 	border-radius: 50%;
 	color: white;
-}
-
-.person-card-outer h4,
-.person-card-outer p {
-	color: var(--color-dark);
 }
 
 .person-card-outer div {

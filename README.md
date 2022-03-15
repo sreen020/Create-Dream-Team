@@ -4,12 +4,16 @@
 1. Clone repo
 ```
 git clone git@github.com:sreen020/Create-Dream-Team.git
+
+cd Create-Dream-Team/
 ```
 
 2. Setup env
 ```
 Copy .env example
+
 Rename this file to: ".env"
+
 Add your database username and password to the "DB_URI"
 ```
 

@@ -48,11 +48,7 @@ Externe API’s: Als externe API hebben we gebruik gemaakt van een adres api. Hi
 
 
 ## Core-functionaliteiten
-- Ik als gebruiker wil op deze website een t-shirt kunnen te bestellen
-- Ik als gebruiker wil de keuze kunnen maken om dit t-shirt te verkrijgen in meerdere kleuren, maten en voor meerdere geslachten
-- Ik als gebruiker wil een tekst kunnen bedrukken op het t-shirt
-- Ik als gebruiker wil een overzicht hebben van alle door mij gemaakte t-shirts
-- Ik als gebruiker wil een eerder gemaakt t-shirt kunnen aanpassen
+TODO
 
 ## Progressive enhancement 
 TODO

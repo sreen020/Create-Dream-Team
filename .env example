@@ -1,2 +1,2 @@
 DB_URI = mongodb+srv://admin:<password>@bloktech.iuilv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-DB_NAME = Secondary
+DB_NAME = data

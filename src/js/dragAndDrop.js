@@ -1,4 +1,20 @@
-function onDragStart(event) {
+// Show the drag and drop functionalities only if javascript is enabled and remove selects
+const loadPage = () => {
+	const selects = document.querySelectorAll('.player-select');
+	const dnds = document.querySelectorAll('.position-name');
+	selects.forEach((select) => {
+		select.classList.add('hidden');
+	});
+
+	dnds.forEach((dnd) => {
+		dnd.classList.remove('hidden');
+	});
+};
+
+loadPage();
+
+// when user drags show dropHereIndicator (timeout is nessesary otherwise drag isn't possible)
+const onDragStart = (event) => {
 	event.dataTransfer.setData('text/plain', event.target.id);
 
 	const dropHereIndicator = document.getElementById('drop-here');
@@ -10,14 +26,15 @@ function onDragStart(event) {
 	if (container.querySelector('.position-name')) {
 		container.querySelector('.position-name').classList.remove('hidden');
 	}
-}
+};
 
-function onDragOver(event) {
+const onDragOver = (event) => {
 	event.preventDefault();
-}
+};
 
-function onDrop(event) {
-	console.log(event.target);
+// append the dragged object to the dropzone
+// checks the drop element. If its a p element drop it on the parent
+const onDrop = (event) => {
 	const id = event.dataTransfer.getData('text');
 
 	const draggableElement = document.getElementById(id);
@@ -39,4 +56,4 @@ function onDrop(event) {
 	dropHereIndicator.classList.add('hidden');
 
 	event.dataTransfer.clearData();
-}
+};

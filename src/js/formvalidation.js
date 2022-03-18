@@ -1,4 +1,6 @@
 const form = document.querySelector('.form');
+
+// List of field id's
 const fields = [
 	'firstname',
 	'lastname',
@@ -16,6 +18,7 @@ const fields = [
 	'rating',
 ];
 
+// On submit check the fields and run the validateFields function for each field
 const validateOnSubmit = () => {
 	form.addEventListener('submit', (e) => {
 		// e.preventDefault();
@@ -28,6 +31,7 @@ const validateOnSubmit = () => {
 	});
 };
 
+// Validate field when user is typing
 const validateOnEntry = () => {
 	fields.forEach((field, index) => {
 		const input = form.querySelector(`#${fields[index]}`);
@@ -37,6 +41,10 @@ const validateOnEntry = () => {
 	});
 };
 
+// Show error when field is empty (all fields)
+// email - Check if the pattern is right and show error if not
+// password confirmation - check if value and if value is the same as password value
+// rating - Check if number is right amount if not show error
 const validateFields = (field) => {
 	if (field.value.trim() === '') {
 		setStatus(
@@ -82,6 +90,9 @@ const validateFields = (field) => {
 	}
 };
 
+// This function is invoked by each input this function shows the succes or error status
+// depending on the status a icon will show up to inform the user
+// if error the field gets a red border class and error will be shown
 const setStatus = (field, message, status) => {
 	const succesIcon = field.parentElement.querySelector('.icon-success');
 	const errorIcon = field.parentElement.querySelector('.icon-error');

@@ -1,6 +1,9 @@
 const zipcode = document.getElementById('zipcode');
 const houseNum = document.getElementById('house_number');
 
+// Check if zipcode value is right amount of characters
+// if not show error msg
+// if its right run the validateAdres function
 const validateInit = () => {
 	zipcode.addEventListener('input', () => {
 		const zipcodeError = document.getElementById('zipcode_error');
@@ -14,6 +17,9 @@ const validateInit = () => {
 	houseNum.addEventListener('input', () => validateAdres());
 };
 
+// check if fields are correct
+// get data from api and fill the streetname and city fields with the correct data
+// if fetched data === undefined show no city and no streetname
 const validateAdres = () => {
 	zipcode.value.length === 6 && houseNum.value && fetchAdres();
 
@@ -30,8 +36,6 @@ const validateAdres = () => {
 
 		const response = await fetch(url, options);
 		const data = await response.json();
-
-		console.log(data);
 
 		data.city ? (city.value = data.city) : (city.value = '');
 		data.street ? (streetName.value = data.street) : (streetName.value = '');

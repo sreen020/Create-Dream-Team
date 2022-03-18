@@ -84,7 +84,6 @@ app.post('/add-user', async (req, res) => {
 
 // Filter users
 app.get('/filter-users', async (req, res) => {
-	console.log(req.query);
 	const query = req.query;
 	const persons = await db.collection('users').find(query).toArray();
 

@@ -55,7 +55,7 @@
 							</select>
 						</div>
 
-						<button type="submit" class="button">Submit</button>
+						<button type="submit" class="button">Filter</button>
 					</form>
 				</article>
 			</div>
@@ -122,14 +122,30 @@
 				ondragover="onDragOver(event);"
 				ondrop="onDrop(event);"
 			>
-				<p class="position-name">+ Front</p>
+				<p class="position-name hidden">+ Links voor</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 			<div
 				class="field-position col-span-4"
 				ondragover="onDragOver(event);"
 				ondrop="onDrop(event);"
 			>
-				<p class="position-name">+ Front</p>
+				<p class="position-name hidden">+ Spits</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 			<div
 				class="field-position col-span-4"
@@ -137,7 +153,15 @@
 				ondrop="onDrop(event);"
 			>
 				<p></p>
-				<p class="position-name">+ Front</p>
+				<p class="position-name hidden">+ Rechts voor</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 
 			<div
@@ -145,21 +169,45 @@
 				ondragover="onDragOver(event);"
 				ondrop="onDrop(event);"
 			>
-				<p class="position-name">+ Middle</p>
+				<p class="position-name hidden">+ Links midden</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 			<div
 				class="field-position col-span-4"
 				ondragover="onDragOver(event);"
 				ondrop="onDrop(event);"
 			>
-				<p class="position-name">+ Middle</p>
+				<p class="position-name hidden">+ Mid-mid</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 			<div
 				class="field-position col-span-4"
 				ondragover="onDragOver(event);"
 				ondrop="onDrop(event);"
 			>
-				<p class="position-name">+ Middle</p>
+				<p class="position-name hidden">+ Rechts midden</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 
 			<div
@@ -167,28 +215,60 @@
 				ondragover="onDragOver(event);"
 				ondrop="onDrop(event);"
 			>
-				<p class="position-name">+ Back</p>
+				<p class="position-name hidden">+ Links back</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 			<div
 				class="field-position col-span-3"
 				ondragover="onDragOver(event);"
 				ondrop="onDrop(event);"
 			>
-				<p class="position-name">+ Back</p>
+				<p class="position-name hidden">+ Centraal</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 			<div
 				class="field-position col-span-3"
 				ondragover="onDragOver(event);"
 				ondrop="onDrop(event);"
 			>
-				<p class="position-name">+ Back</p>
+				<p class="position-name hidden">+ Centraal</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 			<div
 				class="field-position col-span-3"
 				ondragover="onDragOver(event);"
 				ondrop="onDrop(event);"
 			>
-				<p class="position-name">+ Back</p>
+				<p class="position-name hidden">+ Rechts back</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 
 			<div
@@ -196,7 +276,15 @@
 				ondragover="onDragOver(event);"
 				ondrop="onDrop(event);"
 			>
-				<p class="position-name">+ Keeper</p>
+				<p class="position-name hidden">+ Keeper</p>
+				<select class="player-select" name="player">
+					<option value="" disabled selected>Selecteer speler</option>
+					<% data.forEach((item, index)=> {%>
+					<option value="<%=item.firstname%>">
+						<%=item.firstname%> <%=item.lastname%>
+					</option>
+					<% });%>
+				</select>
 			</div>
 		</div>
 	</section>

@@ -50,9 +50,4 @@ WEB API’s: Tijdens het programmeren van deze applicatie worden er meerdere kle
 
 Externe API’s: Als externe API hebben we gebruik gemaakt van een adres api. Hiermee kunnen we een adres valideren. Hierdoor komen er geen rare gegevens in de database te staan. Ook kunnen we de gebruiker zijn/haar postcode en huisnummer in laten voeren en vullen wij automatisch de straatnaam en stad in. Hierdoor weet de gebruiker dat hij dit goed heeft ingevuld en het scheelt hem tijd en moeite.
 
-
-## Core-functionaliteiten
-TODO
-
-## Progressive enhancement 
-TODO
+See the <a href="https://github.com/sreen020/Create-Dream-Team/wiki">WIKI</a> for more information
